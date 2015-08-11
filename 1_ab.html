@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>Belajar Jquery & Javascript</title>
+	<script src="jquery.min.js"></script>
+</head>
+<body>
+
+	<form>
+		Angka : 
+		<br>
+		<input type="numeric" name="angka" id="angka">
+		<br>
+		Text :
+		<br>
+		<select id="text" name="text" onchange="tampilKode(this.value)">
+			<option value="">-- Pilih --</option>
+			<option value="AA-BB-CC">AA-BB-CC</option>
+			<option value="DD-EE-FF">DD-EE-FF</option>
+		</select>
+
+		<br>
+
+		<h3>Hasil :</h3>
+		<p id="tampil"></p>
+	</form>
+	<script>
+		function tampilKode(text) {
+
+			if(text != '') {
+			var angka = $("#angka").val();
+
+			var str = text.split("-");
+
+			var kode = str[1];
+
+			$("#tampil").html(angka+''+kode);
+
+			}
+		}
+	</script>
+</body>
+</html>
